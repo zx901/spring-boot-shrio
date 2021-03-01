@@ -1,7 +1,6 @@
 package org.inlighting.shiro;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -10,6 +9,8 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.inlighting.database.UserService;
 import org.inlighting.database.UserBean;
 import org.inlighting.util.JWTUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,7 @@ import java.util.Set;
 @Service
 public class MyRealm extends AuthorizingRealm {
 
-    private static final Logger LOGGER = LogManager.getLogger(MyRealm.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MyRealm.class);
 
     private UserService userService;
 
